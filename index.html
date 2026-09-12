@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
 
 <meta charset="UTF-8">
 
-<title>FX LEVEL Neon Frame</title>
+<title>FX LEVEL Premium Neon Frame</title>
 
 <style>
 
@@ -31,8 +32,25 @@ body {
 
 
 /* =====================================================
+   PREMIUM COLOR SYSTEM
+===================================================== */
+
+:root {
+
+    --gold-core: #ffd18a;
+    --gold-main: #ffae4a;
+    --gold-soft: rgba(255,174,74,.42);
+    --gold-faint: rgba(255,174,74,.14);
+
+    --white-core: rgba(255,248,232,.95);
+    --white-soft: rgba(255,235,205,.55);
+
+}
+
+
+/* =====================================================
    WEBCAM NEON FRAME
-   EXACT MAIN OVERLAY GEOMETRY
+   GEOMETRY UNCHANGED
 ===================================================== */
 
 .webcam-frame {
@@ -45,40 +63,39 @@ body {
     width: 430px;
     height: 250px;
 
-    border: 4px solid #ffae4a;
+    border: 4px solid var(--gold-main);
 
     border-radius: 0;
 
     background: transparent;
 
+    box-sizing: border-box;
+
     /*
-       Premium amber illumination
-       Core + controlled bloom
+       Premium optical system
+
+       Very sharp core
+       Controlled bloom
+       No oversized neon halo
     */
 
     box-shadow:
 
-        /* sharp outer core */
-        0 0 2px rgba(255,174,74,1),
+        0 0 0 1px rgba(255,174,74,.20),
 
-        /* tight glow */
-        0 0 7px rgba(255,174,74,.95),
+        0 0 4px rgba(255,174,74,.90),
 
-        /* medium bloom */
-        0 0 16px rgba(255,174,74,.65),
+        0 0 10px rgba(255,174,74,.55),
 
-        /* soft atmospheric halo */
-        0 0 34px rgba(255,174,74,.32),
+        0 0 22px rgba(255,174,74,.25),
 
-        /* deep ambient glow */
-        0 0 65px rgba(255,174,74,.16);
+        0 0 42px rgba(255,174,74,.10);
 
 }
 
 
 /* =====================================================
-   WEBCAM INNER LIGHT
-   Very subtle designer highlight
+   INNER PRECISION LINE
 ===================================================== */
 
 .webcam-frame::before {
@@ -87,26 +104,23 @@ body {
 
     position: absolute;
 
-    top: -1px;
-    left: -1px;
+    top: 5px;
+    left: 5px;
 
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
 
-    border: 1px solid rgba(255,230,190,.55);
-
-    pointer-events: none;
+    border: 1px solid rgba(255,230,195,.16);
 
     box-sizing: border-box;
 
-    opacity: .55;
+    pointer-events: none;
 
 }
 
 
 /* =====================================================
-   WEBCAM CORNER ACCENT
-   Minimal graphic highlight
+   PREMIUM CORNER GRAPHIC
 ===================================================== */
 
 .webcam-frame::after {
@@ -118,20 +132,25 @@ body {
     top: -4px;
     left: -4px;
 
-    width: 76px;
+    width: 110px;
     height: 4px;
 
-    background: linear-gradient(
-        90deg,
-        rgba(255,244,220,1),
-        rgba(255,174,74,.9),
-        rgba(255,174,74,0)
-    );
+    background:
+
+        linear-gradient(
+            90deg,
+            #fff6df 0%,
+            #ffd18a 22%,
+            #ffae4a 55%,
+            rgba(255,174,74,.35) 82%,
+            transparent 100%
+        );
 
     box-shadow:
 
-        0 0 5px rgba(255,174,74,1),
-        0 0 13px rgba(255,174,74,.75);
+        0 0 3px rgba(255,248,232,.95),
+        0 0 8px rgba(255,174,74,.60),
+        0 0 16px rgba(255,174,74,.22);
 
     pointer-events: none;
 
@@ -139,8 +158,55 @@ body {
 
 
 /* =====================================================
+   WEBCAM SECONDARY CORNER ACCENT
+===================================================== */
+
+.webcam-frame {
+
+    --corner-size: 58px;
+
+}
+
+
+/*
+   Additional visual accents using
+   multiple backgrounds on the border area
+*/
+
+.webcam-frame {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(255,174,74,.18),
+            transparent 24%
+        ) top left / 130px 1px no-repeat,
+
+        linear-gradient(
+            180deg,
+            rgba(255,174,74,.16),
+            transparent 25%
+        ) top left / 1px 90px no-repeat,
+
+        linear-gradient(
+            270deg,
+            rgba(255,174,74,.12),
+            transparent 22%
+        ) bottom right / 120px 1px no-repeat,
+
+        linear-gradient(
+            0deg,
+            rgba(255,174,74,.10),
+            transparent 25%
+        ) bottom right / 1px 70px no-repeat;
+
+}
+
+
+/* =====================================================
    UPPER PANEL
-   EXACT MAIN OVERLAY GEOMETRY
+   GEOMETRY UNCHANGED
 ===================================================== */
 
 .webcam-panel {
@@ -153,34 +219,31 @@ body {
     width: 430px;
     height: 140px;
 
-    border: 4px solid #ffae4a;
+    border: 4px solid var(--gold-main);
 
     border-radius: 0;
 
     background: transparent;
 
-    /*
-       Same optical system as webcam frame
-       for visual unity
-    */
+    box-sizing: border-box;
 
     box-shadow:
 
-        0 0 2px rgba(255,174,74,1),
+        0 0 0 1px rgba(255,174,74,.20),
 
-        0 0 7px rgba(255,174,74,.95),
+        0 0 4px rgba(255,174,74,.90),
 
-        0 0 16px rgba(255,174,74,.65),
+        0 0 10px rgba(255,174,74,.55),
 
-        0 0 34px rgba(255,174,74,.32),
+        0 0 22px rgba(255,174,74,.25),
 
-        0 0 65px rgba(255,174,74,.16);
+        0 0 42px rgba(255,174,74,.10);
 
 }
 
 
 /* =====================================================
-   UPPER PANEL INNER HIGHLIGHT
+   UPPER PANEL INNER FRAME
 ===================================================== */
 
 .webcam-panel::before {
@@ -189,25 +252,23 @@ body {
 
     position: absolute;
 
-    top: -1px;
-    left: -1px;
+    top: 5px;
+    left: 5px;
 
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
 
-    border: 1px solid rgba(255,230,190,.55);
-
-    pointer-events: none;
+    border: 1px solid rgba(255,230,195,.16);
 
     box-sizing: border-box;
 
-    opacity: .55;
+    pointer-events: none;
 
 }
 
 
 /* =====================================================
-   UPPER PANEL CORNER ACCENT
+   UPPER PANEL PREMIUM CORNER
 ===================================================== */
 
 .webcam-panel::after {
@@ -219,20 +280,25 @@ body {
     top: -4px;
     right: -4px;
 
-    width: 92px;
+    width: 118px;
     height: 4px;
 
-    background: linear-gradient(
-        270deg,
-        rgba(255,244,220,1),
-        rgba(255,174,74,.9),
-        rgba(255,174,74,0)
-    );
+    background:
+
+        linear-gradient(
+            270deg,
+            #fff6df 0%,
+            #ffd18a 22%,
+            #ffae4a 55%,
+            rgba(255,174,74,.35) 82%,
+            transparent 100%
+        );
 
     box-shadow:
 
-        0 0 5px rgba(255,174,74,1),
-        0 0 13px rgba(255,174,74,.75);
+        0 0 3px rgba(255,248,232,.95),
+        0 0 8px rgba(255,174,74,.60),
+        0 0 16px rgba(255,174,74,.22);
 
     pointer-events: none;
 
@@ -240,15 +306,54 @@ body {
 
 
 /* =====================================================
+   PANEL GRAPHIC DETAIL
+===================================================== */
+
+.webcam-panel {
+
+    background:
+
+        linear-gradient(
+            270deg,
+            rgba(255,174,74,.16),
+            transparent 24%
+        ) top right / 135px 1px no-repeat,
+
+        linear-gradient(
+            180deg,
+            rgba(255,174,74,.13),
+            transparent 28%
+        ) top right / 1px 75px no-repeat,
+
+        linear-gradient(
+            90deg,
+            rgba(255,174,74,.10),
+            transparent 25%
+        ) bottom left / 110px 1px no-repeat;
+
+}
+
+
+/* =====================================================
+   MICRO TECH MARKS
+===================================================== */
+
+.webcam-panel {
+
+    --tech-line:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,174,74,.18),
+            transparent
+        );
+
+}
+
+
+/* =====================================================
    PROFESSIONAL 6PX SEPARATOR
-   BETWEEN PANEL AND WEBCAM
-
-   IMPORTANT:
-   This does NOT change either frame's
-   width / height / position.
-
-   Main overlay geometry creates exactly
-   6px of space between the two outer borders.
+   GEOMETRY UNCHANGED
 ===================================================== */
 
 .separator {
@@ -257,50 +362,43 @@ body {
 
     left: 40px;
 
-    /*
-       Panel outer bottom:
-       1080 - 389 = 691
-
-       Webcam outer top:
-       1080 - 125 - 250 - 8 = 697
-
-       Gap:
-       697 - 691 = 6px
-
-       Center line is therefore at y = 694.
-    */
-
     top: 693px;
 
     width: 438px;
 
     height: 2px;
 
-    background: linear-gradient(
-        90deg,
+    background:
 
-        rgba(255,174,74,0),
+        linear-gradient(
+            90deg,
 
-        rgba(255,174,74,.20) 10%,
+            transparent 0%,
 
-        rgba(255,174,74,.85) 30%,
+            rgba(255,174,74,.08) 8%,
 
-        rgba(255,236,190,1) 50%,
+            rgba(255,174,74,.28) 22%,
 
-        rgba(255,174,74,.85) 70%,
+            rgba(255,214,155,.80) 42%,
 
-        rgba(255,174,74,.20) 90%,
+            rgba(255,248,225,1) 50%,
 
-        rgba(255,174,74,0)
-    );
+            rgba(255,214,155,.80) 58%,
+
+            rgba(255,174,74,.28) 78%,
+
+            rgba(255,174,74,.08) 92%,
+
+            transparent 100%
+        );
 
     box-shadow:
 
-        0 0 2px rgba(255,245,220,1),
+        0 0 2px rgba(255,248,225,.95),
 
-        0 0 7px rgba(255,174,74,.85),
+        0 0 5px rgba(255,174,74,.58),
 
-        0 0 16px rgba(255,174,74,.45);
+        0 0 12px rgba(255,174,74,.22);
 
     pointer-events: none;
 
@@ -308,8 +406,7 @@ body {
 
 
 /* =====================================================
-   SEPARATOR CENTER CORE
-   Small graphic connection
+   SEPARATOR CENTER ENERGY CORE
 ===================================================== */
 
 .separator::before {
@@ -320,30 +417,38 @@ body {
 
     left: 50%;
 
-    top: 0;
+    top: -1px;
 
     transform: translateX(-50%);
 
-    width: 110px;
+    width: 76px;
 
-    height: 2px;
+    height: 4px;
 
-    background: #fff0d0;
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,174,74,.60) 18%,
+            #fff4d8 50%,
+            rgba(255,174,74,.60) 82%,
+            transparent
+        );
 
     box-shadow:
 
-        0 0 3px #ffffff,
+        0 0 3px rgba(255,248,225,1),
 
-        0 0 8px #ffae4a,
+        0 0 7px rgba(255,174,74,.75),
 
-        0 0 18px rgba(255,174,74,.85);
+        0 0 14px rgba(255,174,74,.30);
 
 }
 
 
 /* =====================================================
-   SEPARATOR MICRO CUTS
-   Designer-style optical breaks
+   SEPARATOR TECH CUTS
 ===================================================== */
 
 .separator::after {
@@ -358,7 +463,7 @@ body {
 
     transform: translateX(-50%);
 
-    width: 190px;
+    width: 210px;
 
     height: 4px;
 
@@ -368,18 +473,18 @@ body {
             90deg,
 
             transparent 0%,
-            transparent 18%,
+            transparent 17%,
 
-            rgba(255,174,74,.20) 18%,
-            rgba(255,174,74,.20) 20%,
+            rgba(255,174,74,.32) 17%,
+            rgba(255,174,74,.32) 18.5%,
 
-            transparent 20%,
-            transparent 80%,
+            transparent 18.5%,
+            transparent 81.5%,
 
-            rgba(255,174,74,.20) 80%,
-            rgba(255,174,74,.20) 82%,
+            rgba(255,174,74,.32) 81.5%,
+            rgba(255,174,74,.32) 83%,
 
-            transparent 82%,
+            transparent 83%,
             transparent 100%
         );
 
@@ -389,19 +494,31 @@ body {
 
 
 /* =====================================================
-   VERY SUBTLE PREMIUM PULSE
-   Slow — not flashy
+   SMALL TECH POINTS
 ===================================================== */
 
 .webcam-frame,
 .webcam-panel {
 
-    animation: neonBreath 4.8s ease-in-out infinite;
+    isolation: isolate;
 
 }
 
 
-@keyframes neonBreath {
+/* =====================================================
+   PREMIUM AMBIENT ANIMATION
+   Extremely subtle
+===================================================== */
+
+.webcam-frame,
+.webcam-panel {
+
+    animation: premiumBreath 6s ease-in-out infinite;
+
+}
+
+
+@keyframes premiumBreath {
 
     0%,
     100% {
@@ -414,7 +531,7 @@ body {
     50% {
 
         filter:
-            brightness(1.08);
+            brightness(1.035);
 
     }
 
@@ -422,22 +539,22 @@ body {
 
 
 /* =====================================================
-   SEPARATOR BREATH
+   SEPARATOR ANIMATION
 ===================================================== */
 
 .separator {
 
-    animation: separatorBreath 4.8s ease-in-out infinite;
+    animation: separatorPulse 6s ease-in-out infinite;
 
 }
 
 
-@keyframes separatorBreath {
+@keyframes separatorPulse {
 
     0%,
     100% {
 
-        opacity: .72;
+        opacity: .78;
 
     }
 
@@ -454,6 +571,7 @@ body {
    TRANSPARENCY GUARANTEE
 ===================================================== */
 
+html,
 body,
 .webcam-frame,
 .webcam-panel {
@@ -478,7 +596,7 @@ body,
 
 
 <!-- =====================================================
-     6PX PROFESSIONAL SEPARATOR
+     PROFESSIONAL SEPARATOR
 ===================================================== -->
 
 <div class="separator"></div>
@@ -494,3 +612,4 @@ body,
 </body>
 
 </html>
+```
