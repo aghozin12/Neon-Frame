@@ -20,7 +20,7 @@ body {
 
     overflow: hidden;
 
-    background: #808080;
+    background: transparent;
 
     font-family: Arial, sans-serif;
 }
