@@ -1,53 +1,28 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<title>FX LEVEL Deep Blue Premium Frame</title>
+<title>FX LEVEL Green Glow Frame</title>
 
 <style>
 
-/* =====================================================
-   BASE
-===================================================== */
-
 html,
 body {
-
     width: 1920px;
     height: 1080px;
-
     margin: 0;
     padding: 0;
-
     overflow: hidden;
-
     background: transparent !important;
-
     font-family: Arial, sans-serif;
 }
 
-
-/* =====================================================
-   DEEP ELECTRIC BLUE SYSTEM
-===================================================== */
-
 :root {
-
-    --blue-deep: #0877ff;
-    --blue-main: #009dff;
-    --cyan: #18e5ff;
-
-    --blue-bright: #a8f4ff;
-    --white-core: #f2ffff;
-
-    --blue-glow: rgba(0,145,255,.72);
-    --blue-soft: rgba(0,120,255,.38);
-    --blue-deep-glow: rgba(0,70,255,.22);
-
+    --green: #00ff88;
+    --green-bright: #baffdf;
+    --green-soft: rgba(0,255,136,.55);
+    --green-deep: rgba(0,210,110,.28);
 }
 
 
@@ -66,36 +41,36 @@ body {
     width: 430px;
     height: 250px;
 
-    border: 4px solid var(--blue-main);
+    border: 4px solid var(--green);
 
     border-radius: 0;
 
     box-sizing: border-box;
 
-    background: transparent !important;
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(0,255,136,.045) 0%,
+            rgba(0,255,136,.018) 45%,
+            transparent 78%
+        );
 
     box-shadow:
 
-        /* precise white-blue core */
-        0 0 2px rgba(242,255,255,1),
-
-        /* electric edge */
-        0 0 6px rgba(24,229,255,.95),
-
-        /* blue optical glow */
-        0 0 13px rgba(0,157,255,.72),
-
-        /* deeper blue bloom */
-        0 0 25px rgba(0,119,255,.42),
-
-        /* atmospheric blue */
-        0 0 48px rgba(0,70,255,.18);
+        0 0 2px #ffffff,
+        0 0 5px var(--green),
+        0 0 12px rgba(0,255,136,.80),
+        0 0 24px rgba(0,255,136,.48),
+        0 0 45px rgba(0,210,110,.28),
+        inset 0 0 12px rgba(0,255,136,.18),
+        inset 0 0 30px rgba(0,255,136,.08);
 
 }
 
 
 /* =====================================================
-   INNER BLUE HUD LINE
+   INNER FRAME GLOW
 ===================================================== */
 
 .webcam-frame::before {
@@ -110,9 +85,14 @@ body {
     width: calc(100% - 10px);
     height: calc(100% - 10px);
 
-    border: 1px solid rgba(122,235,255,.28);
+    border: 1px solid rgba(0,255,136,.42);
 
     box-sizing: border-box;
+
+    box-shadow:
+
+        inset 0 0 10px rgba(0,255,136,.20),
+        inset 0 0 28px rgba(0,255,136,.08);
 
     pointer-events: none;
 
@@ -120,7 +100,7 @@ body {
 
 
 /* =====================================================
-   MOVING LIGHT
+   MOVING GREEN LIGHT
 ===================================================== */
 
 .webcam-frame::after {
@@ -139,35 +119,22 @@ body {
 
         linear-gradient(
             90deg,
-
-            transparent 0%,
-
-            rgba(0,157,255,.10) 15%,
-
-            rgba(24,229,255,.65) 35%,
-
-            #f2ffff 50%,
-
-            rgba(24,229,255,.95) 65%,
-
-            rgba(0,119,255,.18) 85%,
-
-            transparent 100%
+            transparent,
+            rgba(0,255,136,.45),
+            #ffffff 50%,
+            rgba(0,255,136,.90),
+            transparent
         );
 
     box-shadow:
 
-        0 0 3px rgba(242,255,255,1),
+        0 0 4px #ffffff,
+        0 0 9px var(--green),
+        0 0 20px rgba(0,255,136,.65);
 
-        0 0 8px rgba(24,229,255,.95),
-
-        0 0 18px rgba(0,119,255,.55),
-
-        0 0 30px rgba(0,70,255,.22);
+    animation: scanGreen 7s ease-in-out infinite;
 
     pointer-events: none;
-
-    animation: scanTop 7s ease-in-out infinite;
 
 }
 
@@ -187,31 +154,36 @@ body {
     width: 430px;
     height: 140px;
 
-    border: 4px solid var(--blue-main);
+    border: 4px solid var(--green);
 
     border-radius: 0;
 
     box-sizing: border-box;
 
-    background: transparent !important;
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(0,255,136,.045) 0%,
+            rgba(0,255,136,.018) 45%,
+            transparent 78%
+        );
 
     box-shadow:
 
-        0 0 2px rgba(242,255,255,1),
-
-        0 0 6px rgba(24,229,255,.95),
-
-        0 0 13px rgba(0,157,255,.72),
-
-        0 0 25px rgba(0,119,255,.42),
-
-        0 0 48px rgba(0,70,255,.18);
+        0 0 2px #ffffff,
+        0 0 5px var(--green),
+        0 0 12px rgba(0,255,136,.80),
+        0 0 24px rgba(0,255,136,.48),
+        0 0 45px rgba(0,210,110,.28),
+        inset 0 0 12px rgba(0,255,136,.18),
+        inset 0 0 30px rgba(0,255,136,.08);
 
 }
 
 
 /* =====================================================
-   PANEL INNER HUD LINE
+   PANEL INNER GREEN GLOW
 ===================================================== */
 
 .webcam-panel::before {
@@ -226,9 +198,14 @@ body {
     width: calc(100% - 10px);
     height: calc(100% - 10px);
 
-    border: 1px solid rgba(122,235,255,.28);
+    border: 1px solid rgba(0,255,136,.42);
 
     box-sizing: border-box;
+
+    box-shadow:
+
+        inset 0 0 10px rgba(0,255,136,.20),
+        inset 0 0 28px rgba(0,255,136,.08);
 
     pointer-events: none;
 
@@ -255,41 +232,28 @@ body {
 
         linear-gradient(
             270deg,
-
-            transparent 0%,
-
-            rgba(0,157,255,.10) 15%,
-
-            rgba(24,229,255,.65) 35%,
-
-            #f2ffff 50%,
-
-            rgba(24,229,255,.95) 65%,
-
-            rgba(0,119,255,.18) 85%,
-
-            transparent 100%
+            transparent,
+            rgba(0,255,136,.45),
+            #ffffff 50%,
+            rgba(0,255,136,.90),
+            transparent
         );
 
     box-shadow:
 
-        0 0 3px rgba(242,255,255,1),
+        0 0 4px #ffffff,
+        0 0 9px var(--green),
+        0 0 20px rgba(0,255,136,.65);
 
-        0 0 8px rgba(24,229,255,.95),
-
-        0 0 18px rgba(0,119,255,.55),
-
-        0 0 30px rgba(0,70,255,.22);
+    animation: scanGreenReverse 7s ease-in-out infinite;
 
     pointer-events: none;
-
-    animation: scanTopReverse 7s ease-in-out infinite;
 
 }
 
 
 /* =====================================================
-   PROFESSIONAL SEPARATOR
+   SEPARATOR
    POSITION + SIZE UNCHANGED
 ===================================================== */
 
@@ -309,43 +273,26 @@ body {
 
         linear-gradient(
             90deg,
-
-            transparent 0%,
-
-            rgba(0,119,255,.08) 7%,
-
-            rgba(0,157,255,.35) 20%,
-
-            rgba(24,229,255,.75) 37%,
-
-            rgba(242,255,255,1) 50%,
-
-            rgba(24,229,255,.75) 63%,
-
-            rgba(0,157,255,.35) 80%,
-
-            rgba(0,119,255,.08) 93%,
-
-            transparent 100%
+            transparent,
+            rgba(0,255,136,.25) 18%,
+            rgba(0,255,136,.70) 38%,
+            #ffffff 50%,
+            rgba(0,255,136,.70) 62%,
+            rgba(0,255,136,.25) 82%,
+            transparent
         );
 
     box-shadow:
 
-        0 0 2px rgba(242,255,255,1),
-
-        0 0 6px rgba(24,229,255,.85),
-
-        0 0 14px rgba(0,119,255,.42),
-
-        0 0 25px rgba(0,70,255,.18);
-
-    pointer-events: none;
+        0 0 3px #ffffff,
+        0 0 8px var(--green),
+        0 0 18px rgba(0,255,136,.55);
 
 }
 
 
 /* =====================================================
-   SEPARATOR CENTER ENERGY CORE
+   CENTER ENERGY
 ===================================================== */
 
 .separator::before {
@@ -355,50 +302,35 @@ body {
     position: absolute;
 
     left: 50%;
-
     top: -1px;
 
     transform: translateX(-50%);
 
-    width: 82px;
-
+    width: 90px;
     height: 4px;
 
     background:
 
         linear-gradient(
             90deg,
-
             transparent,
-
-            rgba(0,157,255,.55) 18%,
-
-            rgba(24,229,255,.90) 35%,
-
+            rgba(0,255,136,.65),
             #ffffff 50%,
-
-            rgba(24,229,255,.90) 65%,
-
-            rgba(0,157,255,.55) 82%,
-
+            rgba(0,255,136,.65),
             transparent
         );
 
     box-shadow:
 
-        0 0 3px #ffffff,
-
-        0 0 8px rgba(24,229,255,.95),
-
-        0 0 18px rgba(0,119,255,.55),
-
-        0 0 30px rgba(0,70,255,.25);
+        0 0 4px #ffffff,
+        0 0 10px var(--green),
+        0 0 22px rgba(0,255,136,.65);
 
 }
 
 
 /* =====================================================
-   SEPARATOR TECH CUTS
+   TECH CUTS
 ===================================================== */
 
 .separator::after {
@@ -408,186 +340,112 @@ body {
     position: absolute;
 
     left: 50%;
-
     top: -1px;
 
     transform: translateX(-50%);
 
     width: 210px;
-
     height: 4px;
 
     background:
 
         linear-gradient(
             90deg,
-
             transparent 0%,
-
             transparent 17%,
-
-            rgba(0,157,255,.42) 17%,
-
-            rgba(24,229,255,.42) 18.5%,
-
+            rgba(0,255,136,.38) 17%,
+            rgba(0,255,136,.38) 18.5%,
             transparent 18.5%,
-
             transparent 81.5%,
-
-            rgba(24,229,255,.42) 81.5%,
-
-            rgba(0,157,255,.42) 83%,
-
-            transparent 83%,
-
-            transparent 100%
+            rgba(0,255,136,.38) 81.5%,
+            rgba(0,255,136,.38) 83%,
+            transparent 83%
         );
 
-    pointer-events: none;
-
 }
 
 
 /* =====================================================
-   SUBTLE MOVING LIGHT
+   SUBTLE MOTION
 ===================================================== */
 
-@keyframes scanTop {
+@keyframes scanGreen {
 
     0% {
-
         transform: translateX(0);
-
-        opacity: .20;
-
+        opacity: .18;
     }
 
     10% {
-
-        opacity: .85;
-
+        opacity: .90;
     }
 
     25% {
-
         transform: translateX(325px);
-
         opacity: .95;
-
     }
 
     31% {
-
         opacity: .12;
-
     }
 
     100% {
-
         transform: translateX(325px);
-
         opacity: .12;
-
     }
 
 }
 
 
-@keyframes scanTopReverse {
+@keyframes scanGreenReverse {
 
     0% {
-
         transform: translateX(0);
-
-        opacity: .20;
-
+        opacity: .18;
     }
 
     10% {
-
-        opacity: .85;
-
+        opacity: .90;
     }
 
     25% {
-
         transform: translateX(-325px);
-
         opacity: .95;
-
     }
 
     31% {
-
         opacity: .12;
-
     }
 
     100% {
-
         transform: translateX(-325px);
-
         opacity: .12;
-
     }
 
 }
 
 
 /* =====================================================
-   VERY SUBTLE BLUE BREATH
+   SOFT BREATH
 ===================================================== */
 
 .webcam-frame,
 .webcam-panel {
 
-    animation: blueBreath 6s ease-in-out infinite;
+    animation: greenBreath 6s ease-in-out infinite;
 
 }
 
 
-@keyframes blueBreath {
+@keyframes greenBreath {
 
     0%,
     100% {
-
         filter: brightness(1);
-
     }
 
     50% {
-
-        filter: brightness(1.045);
-
-    }
-
-}
-
-
-/* =====================================================
-   SEPARATOR BREATH
-===================================================== */
-
-.separator {
-
-    animation: separatorBreath 6s ease-in-out infinite;
-
-}
-
-
-@keyframes separatorBreath {
-
-    0%,
-    100% {
-
-        opacity: .72;
-
-    }
-
-    50% {
-
-        opacity: 1;
-
+        filter: brightness(1.04);
     }
 
 }
@@ -613,27 +471,11 @@ body,
 
 <body>
 
-
-<!-- =====================================================
-     UPPER PANEL
-===================================================== -->
-
 <div class="webcam-panel"></div>
-
-
-<!-- =====================================================
-     6PX PROFESSIONAL SEPARATOR
-===================================================== -->
 
 <div class="separator"></div>
 
-
-<!-- =====================================================
-     WEBCAM FRAME
-===================================================== -->
-
 <div class="webcam-frame"></div>
-
 
 </body>
 
