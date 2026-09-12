@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 
-<title>FX LEVEL Neon Test</title>
+<title>FX LEVEL Neon Overlay</title>
 
 <style>
 
@@ -21,14 +21,11 @@ body {
     overflow: hidden;
 
     background: transparent;
-
-    font-family: Arial, sans-serif;
 }
 
 
 /* =====================================================
    NEON WEBCAM
-   همان سایز کد اصلی
 ===================================================== */
 
 .webcam-frame {
@@ -45,8 +42,7 @@ body {
 
     border-radius: 0;
 
-    background:
-        rgba(0, 0, 0, 0.18);
+    background: transparent;
 
     box-shadow:
 
@@ -59,7 +55,6 @@ body {
 
 /* =====================================================
    NEON PANEL ABOVE WEBCAM
-   همان سایز کد اصلی
 ===================================================== */
 
 .webcam-panel {
@@ -76,8 +71,7 @@ body {
 
     border-radius: 0;
 
-    background:
-        rgba(0, 0, 0, 0.18);
+    background: transparent;
 
     box-shadow:
 
@@ -91,23 +85,11 @@ body {
 
 </head>
 
-
 <body>
-
-
-<!-- =====================================================
-     PANEL ABOVE WEBCAM
-===================================================== -->
 
 <div class="webcam-panel"></div>
 
-
-<!-- =====================================================
-     WEBCAM
-===================================================== -->
-
 <div class="webcam-frame"></div>
-
 
 </body>
 
