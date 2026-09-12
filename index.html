@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +6,7 @@
 
 <meta charset="UTF-8">
 
-<title>FX LEVEL Cyan Premium Frame</title>
+<title>FX LEVEL Deep Blue Premium Frame</title>
 
 <style>
 
@@ -32,25 +32,28 @@ body {
 
 
 /* =====================================================
-   PREMIUM CYAN / BLUE COLOR SYSTEM
+   DEEP ELECTRIC BLUE SYSTEM
 ===================================================== */
 
 :root {
 
-    --cyan: #19e6ff;
-    --cyan-bright: #b9f8ff;
-    --cyan-soft: rgba(25,230,255,.42);
-    --cyan-faint: rgba(25,230,255,.12);
+    --blue-deep: #0877ff;
+    --blue-main: #009dff;
+    --cyan: #18e5ff;
 
-    --blue: #1688ff;
-    --white: #eaffff;
+    --blue-bright: #a8f4ff;
+    --white-core: #f2ffff;
+
+    --blue-glow: rgba(0,145,255,.72);
+    --blue-soft: rgba(0,120,255,.38);
+    --blue-deep-glow: rgba(0,70,255,.22);
 
 }
 
 
 /* =====================================================
    WEBCAM FRAME
-   POSITION + SIZE EXACTLY UNCHANGED
+   POSITION + SIZE UNCHANGED
 ===================================================== */
 
 .webcam-frame {
@@ -63,7 +66,7 @@ body {
     width: 430px;
     height: 250px;
 
-    border: 4px solid var(--cyan);
+    border: 4px solid var(--blue-main);
 
     border-radius: 0;
 
@@ -73,21 +76,26 @@ body {
 
     box-shadow:
 
-        0 0 2px rgba(185,248,255,.95),
+        /* precise white-blue core */
+        0 0 2px rgba(242,255,255,1),
 
-        0 0 6px rgba(25,230,255,.85),
+        /* electric edge */
+        0 0 6px rgba(24,229,255,.95),
 
-        0 0 14px rgba(25,230,255,.45),
+        /* blue optical glow */
+        0 0 13px rgba(0,157,255,.72),
 
-        0 0 28px rgba(22,136,255,.22),
+        /* deeper blue bloom */
+        0 0 25px rgba(0,119,255,.42),
 
-        0 0 48px rgba(22,136,255,.10);
+        /* atmospheric blue */
+        0 0 48px rgba(0,70,255,.18);
 
 }
 
 
 /* =====================================================
-   INNER HUD LINE
+   INNER BLUE HUD LINE
 ===================================================== */
 
 .webcam-frame::before {
@@ -102,7 +110,7 @@ body {
     width: calc(100% - 10px);
     height: calc(100% - 10px);
 
-    border: 1px solid rgba(185,248,255,.18);
+    border: 1px solid rgba(122,235,255,.28);
 
     box-sizing: border-box;
 
@@ -113,7 +121,6 @@ body {
 
 /* =====================================================
    MOVING LIGHT
-   SUBTLE ATTENTION EFFECT
 ===================================================== */
 
 .webcam-frame::after {
@@ -132,18 +139,31 @@ body {
 
         linear-gradient(
             90deg,
-            transparent,
-            rgba(185,248,255,.95) 35%,
-            #ffffff 50%,
-            rgba(25,230,255,.85) 68%,
-            transparent
+
+            transparent 0%,
+
+            rgba(0,157,255,.10) 15%,
+
+            rgba(24,229,255,.65) 35%,
+
+            #f2ffff 50%,
+
+            rgba(24,229,255,.95) 65%,
+
+            rgba(0,119,255,.18) 85%,
+
+            transparent 100%
         );
 
     box-shadow:
 
-        0 0 4px rgba(234,255,255,1),
-        0 0 10px rgba(25,230,255,.85),
-        0 0 20px rgba(25,230,255,.38);
+        0 0 3px rgba(242,255,255,1),
+
+        0 0 8px rgba(24,229,255,.95),
+
+        0 0 18px rgba(0,119,255,.55),
+
+        0 0 30px rgba(0,70,255,.22);
 
     pointer-events: none;
 
@@ -154,7 +174,7 @@ body {
 
 /* =====================================================
    UPPER PANEL
-   POSITION + SIZE EXACTLY UNCHANGED
+   POSITION + SIZE UNCHANGED
 ===================================================== */
 
 .webcam-panel {
@@ -167,7 +187,7 @@ body {
     width: 430px;
     height: 140px;
 
-    border: 4px solid var(--cyan);
+    border: 4px solid var(--blue-main);
 
     border-radius: 0;
 
@@ -177,15 +197,15 @@ body {
 
     box-shadow:
 
-        0 0 2px rgba(185,248,255,.95),
+        0 0 2px rgba(242,255,255,1),
 
-        0 0 6px rgba(25,230,255,.85),
+        0 0 6px rgba(24,229,255,.95),
 
-        0 0 14px rgba(25,230,255,.45),
+        0 0 13px rgba(0,157,255,.72),
 
-        0 0 28px rgba(22,136,255,.22),
+        0 0 25px rgba(0,119,255,.42),
 
-        0 0 48px rgba(22,136,255,.10);
+        0 0 48px rgba(0,70,255,.18);
 
 }
 
@@ -206,7 +226,7 @@ body {
     width: calc(100% - 10px);
     height: calc(100% - 10px);
 
-    border: 1px solid rgba(185,248,255,.18);
+    border: 1px solid rgba(122,235,255,.28);
 
     box-sizing: border-box;
 
@@ -235,18 +255,31 @@ body {
 
         linear-gradient(
             270deg,
-            transparent,
-            rgba(185,248,255,.95) 35%,
-            #ffffff 50%,
-            rgba(25,230,255,.85) 68%,
-            transparent
+
+            transparent 0%,
+
+            rgba(0,157,255,.10) 15%,
+
+            rgba(24,229,255,.65) 35%,
+
+            #f2ffff 50%,
+
+            rgba(24,229,255,.95) 65%,
+
+            rgba(0,119,255,.18) 85%,
+
+            transparent 100%
         );
 
     box-shadow:
 
-        0 0 4px rgba(234,255,255,1),
-        0 0 10px rgba(25,230,255,.85),
-        0 0 20px rgba(25,230,255,.38);
+        0 0 3px rgba(242,255,255,1),
+
+        0 0 8px rgba(24,229,255,.95),
+
+        0 0 18px rgba(0,119,255,.55),
+
+        0 0 30px rgba(0,70,255,.22);
 
     pointer-events: none;
 
@@ -256,8 +289,8 @@ body {
 
 
 /* =====================================================
-   PREMIUM 6PX SEPARATOR
-   POSITION EXACTLY UNCHANGED
+   PROFESSIONAL SEPARATOR
+   POSITION + SIZE UNCHANGED
 ===================================================== */
 
 .separator {
@@ -279,30 +312,32 @@ body {
 
             transparent 0%,
 
-            rgba(25,230,255,.06) 8%,
+            rgba(0,119,255,.08) 7%,
 
-            rgba(25,230,255,.25) 22%,
+            rgba(0,157,255,.35) 20%,
 
-            rgba(25,230,255,.65) 40%,
+            rgba(24,229,255,.75) 37%,
 
-            rgba(234,255,255,1) 50%,
+            rgba(242,255,255,1) 50%,
 
-            rgba(25,230,255,.65) 60%,
+            rgba(24,229,255,.75) 63%,
 
-            rgba(25,230,255,.25) 78%,
+            rgba(0,157,255,.35) 80%,
 
-            rgba(25,230,255,.06) 92%,
+            rgba(0,119,255,.08) 93%,
 
             transparent 100%
         );
 
     box-shadow:
 
-        0 0 2px rgba(234,255,255,1),
+        0 0 2px rgba(242,255,255,1),
 
-        0 0 6px rgba(25,230,255,.70),
+        0 0 6px rgba(24,229,255,.85),
 
-        0 0 14px rgba(22,136,255,.25);
+        0 0 14px rgba(0,119,255,.42),
+
+        0 0 25px rgba(0,70,255,.18);
 
     pointer-events: none;
 
@@ -310,7 +345,7 @@ body {
 
 
 /* =====================================================
-   SEPARATOR ENERGY CORE
+   SEPARATOR CENTER ENERGY CORE
 ===================================================== */
 
 .separator::before {
@@ -333,10 +368,19 @@ body {
 
         linear-gradient(
             90deg,
+
             transparent,
-            rgba(25,230,255,.55) 18%,
+
+            rgba(0,157,255,.55) 18%,
+
+            rgba(24,229,255,.90) 35%,
+
             #ffffff 50%,
-            rgba(25,230,255,.55) 82%,
+
+            rgba(24,229,255,.90) 65%,
+
+            rgba(0,157,255,.55) 82%,
+
             transparent
         );
 
@@ -344,9 +388,11 @@ body {
 
         0 0 3px #ffffff,
 
-        0 0 8px rgba(25,230,255,.90),
+        0 0 8px rgba(24,229,255,.95),
 
-        0 0 17px rgba(22,136,255,.35);
+        0 0 18px rgba(0,119,255,.55),
+
+        0 0 30px rgba(0,70,255,.25);
 
 }
 
@@ -377,18 +423,23 @@ body {
             90deg,
 
             transparent 0%,
+
             transparent 17%,
 
-            rgba(25,230,255,.30) 17%,
-            rgba(25,230,255,.30) 18.5%,
+            rgba(0,157,255,.42) 17%,
+
+            rgba(24,229,255,.42) 18.5%,
 
             transparent 18.5%,
+
             transparent 81.5%,
 
-            rgba(25,230,255,.30) 81.5%,
-            rgba(25,230,255,.30) 83%,
+            rgba(24,229,255,.42) 81.5%,
+
+            rgba(0,157,255,.42) 83%,
 
             transparent 83%,
+
             transparent 100%
         );
 
@@ -398,7 +449,7 @@ body {
 
 
 /* =====================================================
-   SUBTLE LIGHT MOTION
+   SUBTLE MOVING LIGHT
 ===================================================== */
 
 @keyframes scanTop {
@@ -407,11 +458,11 @@ body {
 
         transform: translateX(0);
 
-        opacity: .35;
+        opacity: .20;
 
     }
 
-    12% {
+    10% {
 
         opacity: .85;
 
@@ -425,9 +476,9 @@ body {
 
     }
 
-    30% {
+    31% {
 
-        opacity: .20;
+        opacity: .12;
 
     }
 
@@ -435,7 +486,7 @@ body {
 
         transform: translateX(325px);
 
-        opacity: .20;
+        opacity: .12;
 
     }
 
@@ -448,11 +499,11 @@ body {
 
         transform: translateX(0);
 
-        opacity: .35;
+        opacity: .20;
 
     }
 
-    12% {
+    10% {
 
         opacity: .85;
 
@@ -466,9 +517,9 @@ body {
 
     }
 
-    30% {
+    31% {
 
-        opacity: .20;
+        opacity: .12;
 
     }
 
@@ -476,7 +527,7 @@ body {
 
         transform: translateX(-325px);
 
-        opacity: .20;
+        opacity: .12;
 
     }
 
@@ -484,18 +535,18 @@ body {
 
 
 /* =====================================================
-   VERY SUBTLE FRAME BREATH
+   VERY SUBTLE BLUE BREATH
 ===================================================== */
 
 .webcam-frame,
 .webcam-panel {
 
-    animation: frameBreath 6s ease-in-out infinite;
+    animation: blueBreath 6s ease-in-out infinite;
 
 }
 
 
-@keyframes frameBreath {
+@keyframes blueBreath {
 
     0%,
     100% {
@@ -506,7 +557,7 @@ body {
 
     50% {
 
-        filter: brightness(1.035);
+        filter: brightness(1.045);
 
     }
 
@@ -543,7 +594,7 @@ body {
 
 
 /* =====================================================
-   TRANSPARENCY GUARANTEE
+   TRANSPARENCY
 ===================================================== */
 
 html,
