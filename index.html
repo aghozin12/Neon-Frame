@@ -26,21 +26,20 @@ body {
 }
 
 /* =====================================================
-   COPY TRADING PANEL (NEW)
+   SMALL COPY TRADING PANEL (NEW)
 ===================================================== */
 
-.copytrading-panel {
+.copytrading-mini {
     position: absolute;
     left: 40px;
     bottom: 389px;
-    transform: translateY(-180px);
+    transform: translateY(-75px); /* دقیقاً بالای پنل اصلی */
 
     width: 430px;
-    height: 95px;
+    height: 55px; /* کوچک، جمع‌وجور */
 
     border: 3px solid var(--orange);
     box-sizing: border-box;
-    border-radius: 0;
 
     background:
         radial-gradient(
@@ -51,14 +50,14 @@ body {
         );
 
     box-shadow:
-        0 0 3px #ffffff,
-        0 0 8px var(--orange),
-        0 0 18px rgba(255,154,60,.85),
-        0 0 32px rgba(255,154,60,.55),
-        inset 0 0 12px rgba(255,154,60,.22);
+        0 0 2px #ffffff,
+        0 0 6px var(--orange),
+        0 0 14px rgba(255,154,60,.85),
+        0 0 26px rgba(255,154,60,.55),
+        inset 0 0 10px rgba(255,154,60,.20);
 }
 
-.copytrading-panel span {
+.copytrading-mini span {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -66,14 +65,14 @@ body {
 
     color: var(--orange);
     font-family: "Orbitron", "Trebuchet MS", "Segoe UI", sans-serif;
-    font-size: 32px;
-    letter-spacing: 3px;
+    font-size: 22px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 
     text-shadow:
-        0 0 4px #ffffff,
-        0 0 10px rgba(255,154,60,.9),
-        0 0 22px rgba(255,154,60,.7);
+        0 0 3px #ffffff,
+        0 0 8px rgba(255,154,60,.9),
+        0 0 18px rgba(255,154,60,.7);
 }
 
 
@@ -181,9 +180,10 @@ body {
         0 0 45px rgba(0,210,110,.28),
         inset 0 0 12px rgba(0,255,136,.18),
         inset 0 0 30px rgba(0,255,136,.08);
-}
+    }
 
-.webcam-panel::before {content: "";
+.webcam-panel::before {
+    content: "";
     position: absolute;
     top: 5px;
     left: 5px;
@@ -346,7 +346,7 @@ body,
 
 <body>
 
-<div class="copytrading-panel">
+<div class="copytrading-mini">
     <span>COPY TRADING</span>
 </div>
 
