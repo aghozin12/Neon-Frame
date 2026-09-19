@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -648,7 +649,9 @@ body,
 
 <body>
 
-<!-- COPY TRADE BALANCE -->
+<!-- =====================================================
+     COPY TRADE BALANCE
+===================================================== -->
 
 <div class="copy-trade-panel">
 
@@ -660,7 +663,9 @@ body,
 </div>
 
 
-<!-- EXISTING PANELS -->
+<!-- =====================================================
+     EXISTING PANELS
+===================================================== -->
 
 <div class="webcam-panel"></div>
 
@@ -673,19 +678,43 @@ body,
 
 /* =====================================================
    COPY TRADE BALANCE
-   فقط این عدد را تغییر بده
+
+   اگر موجودی نمی‌خواهی:
+   null
+
+   اگر موجودی می‌خواهی:
+   مثلا 1250
 ===================================================== */
 
+const copyTradeBalance = null;
 
-const copyTradeBalance = 1    ;
 
 /* =====================================================
    DISPLAY BALANCE
+
+   پنل همیشه باقی می‌ماند.
+   فقط متن موجودی در صورت نبودن مقدار مخفی می‌شود.
 ===================================================== */
 
-document.getElementById("copyTradeBalance").textContent =
-    "TOTAL BALANCE COPY TRADE: $" +
-    copyTradeBalance.toLocaleString("en-US");
+const balanceText =
+    document.getElementById("copyTradeBalance");
+
+
+if (
+    copyTradeBalance === null ||
+    copyTradeBalance === undefined ||
+    copyTradeBalance === ""
+) {
+
+    balanceText.textContent = "";
+
+} else {
+
+    balanceText.textContent =
+        "TOTAL BALANCE COPY TRADE: $" +
+        Number(copyTradeBalance).toLocaleString("en-US");
+
+}
 
 </script>
 
