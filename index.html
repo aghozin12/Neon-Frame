@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +23,148 @@ body {
     --green-bright: #baffdf;
     --green-soft: rgba(0,255,136,.55);
     --green-deep: rgba(0,210,110,.28);
+}
+
+
+/* =====================================================
+   COPY TRADE TOP PANEL
+===================================================== */
+
+.copy-trade-panel {
+
+    position: absolute;
+
+    left: 40px;
+    bottom: 549px;
+
+    width: 430px;
+    height: 105px;
+
+    border: 4px solid var(--green);
+
+    border-radius: 0;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0,255,136,.045) 0%,
+            rgba(0,255,136,.018) 45%,
+            transparent 78%
+        );
+
+    box-shadow:
+
+        0 0 2px #ffffff,
+        0 0 5px var(--green),
+        0 0 12px rgba(0,255,136,.80),
+        0 0 24px rgba(0,255,136,.48),
+        0 0 45px rgba(0,210,110,.28),
+        inset 0 0 12px rgba(0,255,136,.18),
+        inset 0 0 30px rgba(0,255,136,.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: greenBreath 6s ease-in-out infinite;
+
+}
+
+
+/* INNER GLOW */
+
+.copy-trade-panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    left: 5px;
+
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+
+    border: 1px solid rgba(0,255,136,.42);
+
+    box-sizing: border-box;
+
+    box-shadow:
+
+        inset 0 0 10px rgba(0,255,136,.20),
+        inset 0 0 28px rgba(0,255,136,.08);
+
+    pointer-events: none;
+
+}
+
+
+/* MOVING LIGHT */
+
+.copy-trade-panel::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -4px;
+    left: -4px;
+
+    width: 115px;
+    height: 4px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,255,136,.45),
+            #ffffff 50%,
+            rgba(0,255,136,.90),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 4px #ffffff,
+        0 0 9px var(--green),
+        0 0 20px rgba(0,255,136,.65);
+
+    animation: scanTop 7s ease-in-out infinite;
+
+    pointer-events: none;
+
+}
+
+
+/* TEXT */
+
+.copy-trade-text {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    text-shadow:
+
+        0 0 3px #ffffff,
+        0 0 8px var(--green),
+        0 0 18px rgba(0,255,136,.75);
+
 }
 
 
@@ -366,7 +508,7 @@ body {
 
 
 /* =====================================================
-   SUBTLE MOTION
+   ANIMATIONS
 ===================================================== */
 
 @keyframes scanGreen {
@@ -425,12 +567,41 @@ body {
 }
 
 
+@keyframes scanTop {
+
+    0% {
+        transform: translateX(0);
+        opacity: .18;
+    }
+
+    10% {
+        opacity: .90;
+    }
+
+    25% {
+        transform: translateX(325px);
+        opacity: .95;
+    }
+
+    31% {
+        opacity: .12;
+    }
+
+    100% {
+        transform: translateX(325px);
+        opacity: .12;
+    }
+
+}
+
+
 /* =====================================================
    SOFT BREATH
 ===================================================== */
 
 .webcam-frame,
-.webcam-panel {
+.webcam-panel,
+.copy-trade-panel {
 
     animation: greenBreath 6s ease-in-out infinite;
 
@@ -458,7 +629,8 @@ body {
 html,
 body,
 .webcam-frame,
-.webcam-panel {
+.webcam-panel,
+.copy-trade-panel {
 
     background-color: transparent !important;
 
@@ -471,13 +643,36 @@ body,
 
 <body>
 
+<!-- COPY TRADE PANEL -->
+<div class="copy-trade-panel">
+    <div class="copy-trade-text" id="copyTradeBalance"></div>
+</div>
+
 <div class="webcam-panel"></div>
 
 <div class="separator"></div>
 
 <div class="webcam-frame"></div>
 
-</body>
 
+<script>
+
+/* =====================================================
+   COPY TRADE BALANCE
+   فقط این عدد را تغییر بده
+===================================================== */
+
+const copyTradeBalance = 10000;
+
+
+/* نمایش موجودی */
+
+document.getElementById("copyTradeBalance").textContent =
+    "TOTAL BALANCE COPY TRADE: $" +
+    copyTradeBalance.toLocaleString("en-US");
+
+</script>
+
+</body>
 </html>
 ```
