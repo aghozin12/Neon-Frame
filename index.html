@@ -20,14 +20,14 @@ body {
 
 :root {
     --green: #00ff88;
-    --green-bright: #baffdf;
-    --green-soft: rgba(0,255,136,.55);
-    --green-deep: rgba(0,210,110,.28);
+    --orange: #ff6600;
+    --orange-bright: #ff9a3c;
 }
 
 
 /* =====================================================
-   COPY TRADE TOP PANEL
+   COPY TRADE BALANCE PANEL
+   SMALL / COMPACT
 ===================================================== */
 
 .copy-trade-panel {
@@ -35,12 +35,12 @@ body {
     position: absolute;
 
     left: 40px;
-    bottom: 549px;
+    bottom: 539px;
 
     width: 430px;
-    height: 105px;
+    height: 55px;
 
-    border: 4px solid var(--green);
+    border: 3px solid var(--green);
 
     border-radius: 0;
 
@@ -49,23 +49,23 @@ body {
     background:
         radial-gradient(
             ellipse at center,
-            rgba(0,255,136,.045) 0%,
-            rgba(0,255,136,.018) 45%,
-            transparent 78%
+            rgba(0,255,136,.035) 0%,
+            rgba(0,255,136,.012) 50%,
+            transparent 80%
         );
 
     box-shadow:
 
         0 0 2px #ffffff,
         0 0 5px var(--green),
-        0 0 12px rgba(0,255,136,.80),
-        0 0 24px rgba(0,255,136,.48),
-        0 0 45px rgba(0,210,110,.28),
-        inset 0 0 12px rgba(0,255,136,.18),
-        inset 0 0 30px rgba(0,255,136,.08);
+        0 0 10px rgba(0,255,136,.70),
+        0 0 20px rgba(0,255,136,.35),
+        inset 0 0 10px rgba(0,255,136,.14);
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     animation: greenBreath 6s ease-in-out infinite;
@@ -73,7 +73,9 @@ body {
 }
 
 
-/* INNER GLOW */
+/* =====================================================
+   COPY TRADE INNER LINE
+===================================================== */
 
 .copy-trade-panel::before {
 
@@ -81,27 +83,29 @@ body {
 
     position: absolute;
 
-    top: 5px;
-    left: 5px;
+    top: 4px;
+    left: 4px;
 
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
 
-    border: 1px solid rgba(0,255,136,.42);
+    border: 1px solid rgba(0,255,136,.35);
 
     box-sizing: border-box;
 
     box-shadow:
 
-        inset 0 0 10px rgba(0,255,136,.20),
-        inset 0 0 28px rgba(0,255,136,.08);
+        inset 0 0 8px rgba(0,255,136,.15),
+        inset 0 0 18px rgba(0,255,136,.06);
 
     pointer-events: none;
 
 }
 
 
-/* MOVING LIGHT */
+/* =====================================================
+   COPY TRADE MOVING LIGHT
+===================================================== */
 
 .copy-trade-panel::after {
 
@@ -109,11 +113,11 @@ body {
 
     position: absolute;
 
-    top: -4px;
-    left: -4px;
+    top: -3px;
+    left: -3px;
 
-    width: 115px;
-    height: 4px;
+    width: 90px;
+    height: 3px;
 
     background:
 
@@ -128,9 +132,9 @@ body {
 
     box-shadow:
 
-        0 0 4px #ffffff,
-        0 0 9px var(--green),
-        0 0 20px rgba(0,255,136,.65);
+        0 0 3px #ffffff,
+        0 0 7px var(--green),
+        0 0 15px rgba(0,255,136,.60);
 
     animation: scanTop 7s ease-in-out infinite;
 
@@ -139,7 +143,9 @@ body {
 }
 
 
-/* TEXT */
+/* =====================================================
+   COPY TRADE TEXT
+===================================================== */
 
 .copy-trade-text {
 
@@ -147,13 +153,13 @@ body {
 
     z-index: 2;
 
-    color: #ffffff;
+    color: var(--orange);
 
-    font-size: 22px;
+    font-size: 16px;
 
     font-weight: 700;
 
-    letter-spacing: 1px;
+    letter-spacing: .7px;
 
     text-align: center;
 
@@ -161,9 +167,9 @@ body {
 
     text-shadow:
 
-        0 0 3px #ffffff,
-        0 0 8px var(--green),
-        0 0 18px rgba(0,255,136,.75);
+        0 0 2px #ffb066,
+        0 0 6px var(--orange),
+        0 0 12px rgba(255,102,0,.85);
 
 }
 
@@ -643,10 +649,19 @@ body,
 
 <body>
 
-<!-- COPY TRADE PANEL -->
+<!-- COPY TRADE BALANCE -->
+
 <div class="copy-trade-panel">
-    <div class="copy-trade-text" id="copyTradeBalance"></div>
+
+    <div
+        class="copy-trade-text"
+        id="copyTradeBalance">
+    </div>
+
 </div>
+
+
+<!-- EXISTING PANELS -->
 
 <div class="webcam-panel"></div>
 
@@ -665,7 +680,9 @@ body,
 const copyTradeBalance = 10000;
 
 
-/* نمایش موجودی */
+/* =====================================================
+   DISPLAY BALANCE
+===================================================== */
 
 document.getElementById("copyTradeBalance").textContent =
     "TOTAL BALANCE COPY TRADE: $" +
