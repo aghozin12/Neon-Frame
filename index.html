@@ -25,155 +25,6 @@ body {
 
 
 /* =====================================================
-   COPY TRADE BALANCE PANEL
-   SMALL / COMPACT
-===================================================== */
-
-.copy-trade-panel {
-
-    position: absolute;
-
-    left: 40px;
-    bottom: 539px;
-
-    width: 430px;
-    height: 55px;
-
-    border: 3px solid var(--green);
-
-    border-radius: 0;
-
-    box-sizing: border-box;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(0,255,136,.035) 0%,
-            rgba(0,255,136,.012) 50%,
-            transparent 80%
-        );
-
-    box-shadow:
-
-        0 0 2px #ffffff,
-        0 0 5px var(--green),
-        0 0 10px rgba(0,255,136,.70),
-        0 0 20px rgba(0,255,136,.35),
-        inset 0 0 10px rgba(0,255,136,.14);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    animation: greenBreath 6s ease-in-out infinite;
-
-}
-
-
-/* =====================================================
-   COPY TRADE INNER LINE
-===================================================== */
-
-.copy-trade-panel::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 4px;
-    left: 4px;
-
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-
-    border: 1px solid rgba(0,255,136,.35);
-
-    box-sizing: border-box;
-
-    box-shadow:
-
-        inset 0 0 8px rgba(0,255,136,.15),
-        inset 0 0 18px rgba(0,255,136,.06);
-
-    pointer-events: none;
-
-}
-
-
-/* =====================================================
-   COPY TRADE MOVING LIGHT
-===================================================== */
-
-.copy-trade-panel::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: -3px;
-    left: -3px;
-
-    width: 90px;
-    height: 3px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(0,255,136,.45),
-            #ffffff 50%,
-            rgba(0,255,136,.90),
-            transparent
-        );
-
-    box-shadow:
-
-        0 0 3px #ffffff,
-        0 0 7px var(--green),
-        0 0 15px rgba(0,255,136,.60);
-
-    animation: scanTop 7s ease-in-out infinite;
-
-    pointer-events: none;
-
-}
-
-
-/* =====================================================
-   COPY TRADE TEXT
-===================================================== */
-
-.copy-trade-text {
-
-    position: relative;
-
-    z-index: 2;
-
-    color: var(--orange);
-
-    font-size: 16px;
-
-    font-weight: 700;
-
-    letter-spacing: .7px;
-
-    text-align: center;
-
-    white-space: nowrap;
-
-    text-shadow:
-
-        0 0 2px #ffb066,
-        0 0 6px var(--orange),
-        0 0 12px rgba(255,102,0,.85);
-
-}
-
-
-/* =====================================================
    WEBCAM FRAME
    POSITION + SIZE UNCHANGED
 ===================================================== */
@@ -572,41 +423,12 @@ body {
 }
 
 
-@keyframes scanTop {
-
-    0% {
-        transform: translateX(0);
-        opacity: .18;
-    }
-
-    10% {
-        opacity: .90;
-    }
-
-    25% {
-        transform: translateX(325px);
-        opacity: .95;
-    }
-
-    31% {
-        opacity: .12;
-    }
-
-    100% {
-        transform: translateX(325px);
-        opacity: .12;
-    }
-
-}
-
-
 /* =====================================================
    SOFT BREATH
 ===================================================== */
 
 .webcam-frame,
-.webcam-panel,
-.copy-trade-panel {
+.webcam-panel {
 
     animation: greenBreath 6s ease-in-out infinite;
 
@@ -634,8 +456,7 @@ body {
 html,
 body,
 .webcam-frame,
-.webcam-panel,
-.copy-trade-panel {
+.webcam-panel {
 
     background-color: transparent !important;
 
@@ -649,20 +470,6 @@ body,
 <body>
 
 <!-- =====================================================
-     COPY TRADE BALANCE
-===================================================== -->
-
-<div class="copy-trade-panel">
-
-    <div
-        class="copy-trade-text"
-        id="copyTradeBalance">
-    </div>
-
-</div>
-
-
-<!-- =====================================================
      EXISTING PANELS
 ===================================================== -->
 
@@ -672,50 +479,6 @@ body,
 
 <div class="webcam-frame"></div>
 
-
-<script>
-
-/* =====================================================
-   COPY TRADE BALANCE
-
-   اگر موجودی نمی‌خواهی:
-   null
-
-   اگر موجودی می‌خواهی:
-   مثلا 1250
-===================================================== */
-
-const copyTradeBalance = null;
-
-
-/* =====================================================
-   DISPLAY BALANCE
-
-   پنل همیشه باقی می‌ماند.
-   فقط متن موجودی در صورت نبودن مقدار مخفی می‌شود.
-===================================================== */
-
-const balanceText =
-    document.getElementById("copyTradeBalance");
-
-
-if (
-    copyTradeBalance === null ||
-    copyTradeBalance === undefined ||
-    copyTradeBalance === ""
-) {
-
-    balanceText.textContent = "";
-
-} else {
-
-    balanceText.textContent =
-        "TOTAL BALANCE COPY TRADE: $" +
-        Number(copyTradeBalance).toLocaleString("en-US");
-
-}
-
-</script>
 
 </body>
 </html>
